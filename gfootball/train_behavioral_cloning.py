@@ -99,6 +99,8 @@ def train_on_games(model, start_game, end_game, n_epochs):
     observations = np.concatenate(observations)
     actions = np.concatenate(actions)
 
+    observations /= 255
+
     n_total = observations.shape[0]
     n_train = int(0.9 * n_total)
     n_test = n_total - n_train
